@@ -6,6 +6,7 @@ the mail queue. It extracts these metrics from Postfix by connecting to
 a UNIX socket under `/var/spool`. It also counts events by parsing Postfix's
 log entries, using regular expression matching. The log entries are retrieved from
 the systemd journal, the Docker logs, or from a log file.
+URL Grafana -> https://grafana.com/grafana/dashboards/10013
 
 ## Options
 
