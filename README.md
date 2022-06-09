@@ -51,6 +51,17 @@ This overrides the log file setting.
 It is possible to specify the unit (with `--systemd.unit`) or slice (with `--systemd.slice`).
 Additionally, it is possible to read the journal from a directory with the `--systemd.journal_path` flag.
 
+
+## Build
+
+```
+make install-upx install-deps
+make build
+ls -sh build
+cd build ; ./postfix_exporter --help
+```
+
+
 ## Build options
 
 Default the exporter is build with systemd journal functionality (but it is disabled at default).
@@ -58,8 +69,5 @@ Because the systemd headers are required for building with systemd, there is
 an option to build the exporter without systemd. Use the build tag `nosystemd`.
 
 ```
-make install-upx install-deps
-make build
-ls -sh build
-cd build ; ./postfix_exporter --help
+go build -ldflags="-s -w" -o build/postfix_exporter -tags nosystemd
 ```
