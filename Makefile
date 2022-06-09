@@ -9,7 +9,7 @@ all: build
 
 
 build:
-	go build -tags nosystemd -ldflags="-s -w" -o $(FOLDER)/$(PACKAGE_NAME) $(PACKAGE_NAME)/*.go
+	go build -tags nosystemd -ldflags="-s -w" -o $(FOLDER)/$(PACKAGE_NAME) *.go
 	ls -sh $(FOLDER)/$(PACKAGE_NAME)
 	upx --best --lzma $(FOLDER)/$(PACKAGE_NAME)
 	ls -sh $(FOLDER)/$(PACKAGE_NAME)
