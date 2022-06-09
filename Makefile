@@ -20,7 +20,7 @@ create-tar:
 
 install-deps:
 	sudo apt-get -qq update
-	sudo apt-get install -yq libsystemd-dev
+	sudo apt-get install -yq build-essential libsystemd-dev make
 
 install-upx:
 	sudo apt-get -qq update
