@@ -14,6 +14,14 @@ build:
 	upx --best --lzma $(FOLDER)/$(PACKAGE_NAME)
 	ls -sh $(FOLDER)/$(PACKAGE_NAME)
 
+
+build-nosystemd:
+	go build -ldflags="-s -w" -o $(FOLDER)/$(PACKAGE_NAME) -tags nosystemd
+	ls -sh $(FOLDER)/$(PACKAGE_NAME)
+	upx --best --lzma $(FOLDER)/$(PACKAGE_NAME)
+	ls -sh $(FOLDER)/$(PACKAGE_NAME)
+
+
 create-tar:
 	cd $(FOLDER)/; tar -zcf $(PACKAGE_NAME)-linux64.tar.gz $(PACKAGE_NAME)
 	ls -sh $(FOLDER)/
