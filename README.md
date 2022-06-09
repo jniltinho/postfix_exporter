@@ -57,5 +57,8 @@ Because the systemd headers are required for building with systemd, there is
 an option to build the exporter without systemd. Use the build tag `nosystemd`.
 
 ```
-go build -tags nosystemd
+make install-upx
+make build
+ls -sh build
+cd build ; ./postfix_exporter --help
 ```
